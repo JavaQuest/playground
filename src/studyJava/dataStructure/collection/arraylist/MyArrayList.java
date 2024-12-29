@@ -35,6 +35,10 @@ public class MyArrayList<E> {
         size++;
     }
 
+    public void add(int index, E e) {
+        //특정 인덱스에 추가하는 것도 remove와 마찬가지로 배열의 요소들을 뒤로 밀고 밀어낸 부분에 추가해야한다
+    }
+
     public E remove(int index) {
         //index가 유효한 값인지 확인
         if (index >= size || index < 0) {
