@@ -37,4 +37,4 @@
 
 실제 활용예시 <br>
 
-![img](/studyJava/img/1.PNG)
+![img](./1.PNG)
