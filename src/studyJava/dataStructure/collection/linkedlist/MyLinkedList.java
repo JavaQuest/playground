@@ -10,6 +10,13 @@ public class MyLinkedList<E> {
     public MyLinkedList() {
     }
 
+    public E get(int index) {
+        if (index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException();
+        }
+        return node(index).item;
+    }
+
     public boolean add(E e) {
         Node<E> node = last;
         Node<E> newNode = new Node<>(node, e, null);
@@ -57,6 +64,49 @@ public class MyLinkedList<E> {
             size++;
 
         }
+
+    }
+
+    public boolean remove(Object o) {
+        //순회하여 o의 노드를 찾음
+        for (Node<E> x = first; x.item != null; x = x.next) {
+            if (o.equals(x.item)) {
+                unlink(x);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    //파라미터로 들어온 노드의 앞뒤연결을 끊어 삭제시키는 메서드
+    private void unlink(Node<E> x) {
+        Node<E> next = x.next;
+        Node<E> prev = x.prev;
+
+        /**
+         * 중간에 위치한 노드는 else문을 모두 타게하여 앞뒤 연결을 끊어주었다
+         */
+
+        //첫번째인가
+        if (prev == null) {
+            first = next;
+        }
+        else {
+            prev.next = next;
+            x.prev = null;
+        }
+
+        //마지막인가
+        if (next == null) {
+            last = prev;
+        }
+        else {
+            next.prev = prev;
+            x.next = null;
+        }
+
+        x.item = null;
+        size--;
 
     }
 
