@@ -1,4 +1,4 @@
-package studyJava.dataStructure.collection.queuedeque;
+package studyJava.sangwook.dataStructure.collection.queuedeque;
 
 import java.util.ArrayDeque;
 import java.util.Deque;

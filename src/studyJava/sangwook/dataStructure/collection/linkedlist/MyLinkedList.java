@@ -1,4 +1,4 @@
-package studyJava.dataStructure.collection.linkedlist;
+package studyJava.sangwook.dataStructure.collection.linkedlist;
 
 //LinkedList를 직접 구현하자
 public class MyLinkedList<E> {

@@ -1,16 +1,17 @@
-package studyJava.dataStructure.collection.vector;
+package studyJava.sangwook.dataStructure.collection.arraylist;
 
 import java.util.Arrays;
 
-public class MyVector<E> {
+//ArrayList를 직접 구현하자
+public class MyArrayList<E> {
 
     private static final int DEFAULT_CAPACITY = 10;
 
-    private int elementCount;
+    private int size;
 
     private Object[] elementData;
 
-    public MyVector(int initialCapacity) {
+    public MyArrayList(int initialCapacity) {
         if (initialCapacity > 0) {
             this.elementData = new Object[initialCapacity];
         } else if (initialCapacity == 0) {
@@ -18,7 +19,7 @@ public class MyVector<E> {
         }
     }
 
-    public MyVector() {
+    public MyArrayList() {
         this.elementData = new Object[DEFAULT_CAPACITY];
     }
 
@@ -26,18 +27,21 @@ public class MyVector<E> {
      * elementData 배열에 집어넣고 size를 증가시키는데
      * elementData가 가득찬 경우 기존 배열을 바탕으로 사이즈를 늘린 새로운 배열로 할당
      */
-    public synchronized boolean add(E e) {
-        if (elementCount == elementData.length) { //element가 가득찬 경우
+    public void add(E e) {
+        if (size == elementData.length) { //element가 가득찬 경우
             elementData = grow();
         }
-        elementData[elementCount] = e;
-        elementCount++;
-        return true;
+        elementData[size] = e;
+        size++;
     }
 
-    public synchronized E remove(int index) {
+    public void add(int index, E e) {
+        //특정 인덱스에 추가하는 것도 remove와 마찬가지로 배열의 요소들을 뒤로 밀고 밀어낸 부분에 추가해야한다
+    }
+
+    public E remove(int index) {
         //index가 유효한 값인지 확인
-        if (index >= elementCount || index < 0) {
+        if (index >= size || index < 0) {
             throw new IndexOutOfBoundsException();
         }
         //index의 값을 없애고 배열을 다 앞으로 당겨야함
@@ -49,7 +53,7 @@ public class MyVector<E> {
         return oldValue;
     }
 
-    public synchronized boolean remove(Object o) {
+    public boolean remove(Object o) {
         //배열 순회하여 object 탐색
         Integer index = null;
 
@@ -72,21 +76,21 @@ public class MyVector<E> {
     private void remakeArray(int index) {
         elementData[index] = null;
 
-        for (int i = index; i < elementCount - 1; i++) {
+        for (int i = index; i < size - 1; i++) {
             elementData[i] = elementData[i + 1];
             elementData[i + 1] = null;
         }
 
-        elementCount--;
+        size--;
     }
 
     @SuppressWarnings("unchecked")
-    public synchronized E get(int index) {
+    public E get(int index) {
         return (E) elementData[index];
     }
 
-    public synchronized int size() {
-        return elementCount;
+    public int size() {
+        return size;
     }
 
     //간단하게 2배로 늘림

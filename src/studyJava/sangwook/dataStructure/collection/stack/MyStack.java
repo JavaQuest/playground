@@ -1,4 +1,4 @@
-package studyJava.dataStructure.collection.stack;
+package studyJava.sangwook.dataStructure.collection.stack;
 
 import java.util.EmptyStackException;
 import java.util.Vector;

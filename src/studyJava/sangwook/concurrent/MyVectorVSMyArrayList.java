@@ -1,7 +1,7 @@
-package studyJava.concurrent;
+package studyJava.sangwook.concurrent;
 
-import studyJava.dataStructure.collection.arraylist.MyArrayList;
-import studyJava.dataStructure.collection.vector.MyVector;
+import studyJava.sangwook.dataStructure.collection.arraylist.MyArrayList;
+import studyJava.sangwook.dataStructure.collection.vector.MyVector;
 
 //MyArrayList와 synchronized가 붙은 MyVector의 차이를 알아보자
 //but 이 코드는 순서를 보장하지 않기 때문에 vector가 0이 나오지 않을 가능성도 있다 -> 테스트 결과 보통은 나오는듯

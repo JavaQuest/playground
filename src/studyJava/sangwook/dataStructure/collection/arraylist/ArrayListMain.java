@@ -1,4 +1,4 @@
-package studyJava.dataStructure.collection.arraylist;
+package studyJava.sangwook.dataStructure.collection.arraylist;
 
 
 public class ArrayListMain {
