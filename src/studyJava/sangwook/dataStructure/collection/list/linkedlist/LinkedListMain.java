@@ -1,4 +1,4 @@
-package studyJava.sangwook.dataStructure.collection.linkedlist;
+package studyJava.sangwook.dataStructure.collection.list.linkedlist;
 
 import java.util.Iterator;
 import java.util.LinkedList;

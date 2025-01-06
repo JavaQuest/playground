@@ -1,4 +1,4 @@
-package studyJava.sangwook.dataStructure.collection.vector;
+package studyJava.sangwook.dataStructure.collection.list.vector;
 
 import java.util.Arrays;
 

@@ -1,4 +1,4 @@
-package studyJava.sangwook.dataStructure.collection.arraylist;
+package studyJava.sangwook.dataStructure.collection.list.arraylist;
 
 import java.util.Arrays;
 
