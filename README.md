@@ -1,3 +1,4 @@
+## [List](https://github.com/JavaQuest/playground/blob/master/src/studyJava/note/List.md)
 ## [ArrayList](https://github.com/JavaQuest/playground/blob/master/src/studyJava/note/ArrayList.md)
 ## LinkedList
 ## [Vector](https://github.com/JavaQuest/playground/blob/master/src/studyJava/note/Vector.md)
