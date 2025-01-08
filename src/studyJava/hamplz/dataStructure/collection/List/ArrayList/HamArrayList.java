@@ -27,7 +27,7 @@ import java.util.Arrays;
 *
 * int size() - 리스트의 크기를 반환
 */
-public class HamArrayList<E> implements List<E> {
+public class HamArrayList<E> {
     private static final int DEFAULT_CAPACITY = 10; // 기본 용량
     private static final Object[] EMPTY_DATA = {}; // 빈 배열
 
@@ -49,17 +49,12 @@ public class HamArrayList<E> implements List<E> {
         size = 0;
     }
 
-    public HamArrayList(Collection<? extends E> c) {
-
-    }
-
     /**
      * 특정 위치에 요소를 추가
      *
      * @param index 위치
      * @param element 추가할 요소
      */
-    @Override
     public void add(int index, E element) {
         // range check
         // 용량을 충분히 확보
@@ -72,16 +67,15 @@ public class HamArrayList<E> implements List<E> {
      * @param element 추가할 요소
      * @return 추가된 요소
      */
-    @Override
     public E add(E element) {
         // 용량을 충분히 확보
         // 새 요소를 배열에 추가
+        return (E) element;
     }
 
     /**
      * 모든 요소를 제거
      */
-    @Override
     public void clear() {
         for (int i = 0; i < size; i++) {
             data[i] = null;
@@ -95,7 +89,6 @@ public class HamArrayList<E> implements List<E> {
      * @param o 확인할 객체
      * @return 포함되면 true, 아니면 false
      */
-    @Override
     public boolean contains(Object o) {
         return indexOf(o) >= 0;
     }
@@ -106,7 +99,6 @@ public class HamArrayList<E> implements List<E> {
      * @param index 조회할 인덱스
      * @return 해당 인덱스의 요소
      */
-    @Override
     public E get(int index) {
         return (E) data[index];
     }
@@ -118,7 +110,6 @@ public class HamArrayList<E> implements List<E> {
      * @param element 교체할 새로운 값
      * @return 교체된 이전 값
      */
-    @Override
     public E set(int index, E element) {
         E old = get(index);
         data[index] = element;
@@ -131,12 +122,11 @@ public class HamArrayList<E> implements List<E> {
      * @param index 제거할 인덱스
      * @return 제거된 요소
      */
-    @Override
     public E remove(int index) {
         // 유효한 인덱스 확인
 
         E old = get(index);
-        elementRemove(i);
+        elementRemove(index);
         return old;
     }
 
@@ -146,7 +136,6 @@ public class HamArrayList<E> implements List<E> {
      * @param o 제거할 객체
      * @return 제거되었으면 true, 아니면 false
      */
-    @Override
     public boolean remove(Object o) {
         if (o == null) {
             for (int i = 0; i < size; i++) {
@@ -173,7 +162,6 @@ public class HamArrayList<E> implements List<E> {
      * @param o 찾을 객체
      * @return 첫 번째 인덱스, 없으면 -1
      */
-    @Override
     public int indexOf(Object o) {
         if (o == null) {
             for (int i = 0; i < size; i++) {
@@ -194,7 +182,6 @@ public class HamArrayList<E> implements List<E> {
      * @param o 찾을 객체
      * @return 마지막 인덱스, 없으면 -1
      */
-    @Override
     public int lastIndexOf(Object o) {
         if (o == null) {
             for (int i = size-1; i >= 0; i--) {
@@ -215,7 +202,6 @@ public class HamArrayList<E> implements List<E> {
      *
      * @return 리스트가 비어 있으면 true, 그렇지 않으면 false
      */
-    @Override
     public boolean isEmpty() {
         return size == 0;
     }
@@ -225,7 +211,6 @@ public class HamArrayList<E> implements List<E> {
      *
      * @return 리스트에 저장된 요소의 개수
      */
-    @Override
     public int size() {
         return size;
     }
@@ -257,8 +242,9 @@ public class HamArrayList<E> implements List<E> {
 
     // 인덱스 범위 체크
     private void rangeCheck(int index) {
-
+        if (index < 0 || index > size) {
+            throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + size);
+        }
     }
-
 
 }
