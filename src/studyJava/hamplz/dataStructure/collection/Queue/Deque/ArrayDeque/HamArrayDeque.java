@@ -5,10 +5,10 @@ import java.util.NoSuchElementException;
 public class HamArrayDeque<E> {
     private static final int DEFAULT_CAPACITY = 16; // 초기 size
 
-    private Object[] elements; // 내부 배열
-    private int head;          // 덱의 시작 인덱스
-    private int tail;          // 덱의 끝 인덱스
-    private int size;          // 덱의 현재 크기
+    public Object[] elements; // 내부 배열
+    public int head;          // 덱의 시작 인덱스
+    public int tail;          // 추가 될 요소의 인덱스
+    public int size;          // 덱의 현재 크기
 
     public HamArrayDeque() {
         elements = new Object[DEFAULT_CAPACITY];
@@ -87,7 +87,7 @@ public class HamArrayDeque<E> {
 
     private void ensureCapacity() {
         if (size == elements.length) { // 배열이 다 차면
-            int newCapacity = elements.length * 2;
+            int newCapacity = (int)(elements.length * 1.5);
             Object[] newArray = new Object[newCapacity];
             for (int i = 0; i < size; i++) {
                 newArray[i] = elements[(head + i) % elements.length]; // 원형 배열에서 요소를 복사
