@@ -19,7 +19,7 @@ public class HamArrayListTest {
 
         // 4. 요소 교체
         list.set(2, "Programming");
-        System.out.println("index 2: " + toString(list));
+        System.out.println("elements: " + toString(list));
 
         // 5. 요소 포함 여부 확인
         System.out.println("'Java' 포함 ? " + list.contains("Java"));
@@ -43,7 +43,6 @@ public class HamArrayListTest {
         System.out.println("empty :" + list.isEmpty());
     }
 
-    // 리스트를 보기 좋은 문자열로 변환하는 메서드
     private static String toString(HamArrayList<?> list) {
         StringBuilder sb = new StringBuilder("[");
         for (int i = 0; i < list.size(); i++) {

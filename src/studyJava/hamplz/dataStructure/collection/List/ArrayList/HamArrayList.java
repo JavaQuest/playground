@@ -56,9 +56,13 @@ public class HamArrayList<E> {
      * @param element 추가할 요소
      */
     public void add(int index, E element) {
-        // range check
-        // 용량을 충분히 확보
-        // index 위치부터 요소를 뒤로 밀어서 공간을 확보
+        rangeCheck(index);
+        ensureCapacity(size + 1);
+        for (int i = size; i > index; i--) {
+            data[i] = data[i-1];
+        }
+        data[index] = element;
+        size++;
     }
 
     /**
@@ -68,9 +72,9 @@ public class HamArrayList<E> {
      * @return 추가된 요소
      */
     public E add(E element) {
-        // 용량을 충분히 확보
-        // 새 요소를 배열에 추가
-        return (E) element;
+        ensureCapacity(size + 1); // 용량 확보
+        data[size++] = element;
+        return element;
     }
 
     /**
@@ -226,6 +230,9 @@ public class HamArrayList<E> {
 
     // 용량을 확보하는 메소드
     private void ensureCapacity(int minCapacity) {
+        if (data == EMPTY_DATA) {
+            minCapacity = Math.max(DEFAULT_CAPACITY, minCapacity);
+        }
         if (minCapacity - data.length > 0) {
             grow(minCapacity);
         }
@@ -242,7 +249,7 @@ public class HamArrayList<E> {
 
     // 인덱스 범위 체크
     private void rangeCheck(int index) {
-        if (index < 0 || index > size) {
+        if (index < 0 || index >= size) {
             throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + size);
         }
     }
