@@ -1,4 +1,4 @@
-package studyJava.sangwook.dataStructure.collection.queue.deque;
+package studyJava.sangwook.dataStructure.collection.queue.deque.arraydeque;
 
 //ArrayDeque를 직접 구현하자
 public class MyArrayDeque<E> {

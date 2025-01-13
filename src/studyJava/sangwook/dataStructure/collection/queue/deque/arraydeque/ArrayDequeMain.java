@@ -1,8 +1,8 @@
-package studyJava.sangwook.dataStructure.collection.queue.deque;
+package studyJava.sangwook.dataStructure.collection.queue.deque.arraydeque;
 
 import java.util.*;
 
-public class QueueMain {
+public class ArrayDequeMain {
     public static void main(String[] args) {
         MyArrayDeque<Integer> queue = new MyArrayDeque<>(1);
         queue.add(3);
