@@ -3,7 +3,7 @@ package studyJava.hamplz.dataStructure.collection.Queue.PriorityQueue;
 public class HamPriorityQueue<E> {
     private static final int DEFAULT_INITIAL_CAPACITY = 11;
     private static int size;
-    private static Object[] queue;
+    public Object[] queue;
 
     // O(log(n)) time : offer, poll, remove(),add
     // linear time : remove(Object) and contains(Object)
