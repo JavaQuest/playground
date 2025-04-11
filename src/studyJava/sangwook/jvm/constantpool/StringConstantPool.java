@@ -17,5 +17,9 @@ public class StringConstantPool {
         String str6 = new String("Hello!!!!").intern();
         System.out.println(str5 == str6);
 
+        String str7 = "he" + "llo"; //컴파일 타임에 상수 최적화
+        String str8 = "hello";
+        System.out.println(str7 == str8);
+
     }
 }
