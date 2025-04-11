@@ -17,3 +17,5 @@ String Constant Pool에 있는 String의 대상은 GC 대상이 되기 힘들다
 
 그렇다고 동적으로 생성된 (ORM, MyBatis 등을 통하여 생성된) String들이 String Constant Pool에 저장되지는 않는다
 
+- `"he" + "llo"`와 같이 선언하여도 컴파일 타임에 상수 최적화를 위해 String Constant Pool에 들어간다
+- String Constant Pool에 들어가는 String에는 객체안에 선언된 String도 포함된다
