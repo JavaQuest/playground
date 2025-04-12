@@ -33,6 +33,9 @@ public class StackMain {
         modifyPerson(person);
         System.out.println(person.getName());
 
+        modifyPersonReference(person);
+        System.out.println(person.getName());
+
     }
 
     public static void modifyPrimitive(int value) {
@@ -55,6 +58,11 @@ public class StackMain {
 
     public static void modifyPerson(Person person) {
         person.setName("ooo");
+    }
+
+    public static void modifyPersonReference(Person person) {
+        Person newPerson = new Person("ddd");
+        person = newPerson;
     }
 
 }
