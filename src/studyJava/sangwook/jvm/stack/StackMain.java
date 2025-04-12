@@ -33,9 +33,13 @@ public class StackMain {
         modifyPerson(person);
         System.out.println(person.getName());
 
+        //Person 참조 변경
         modifyPersonReference(person);
         System.out.println(person.getName());
 
+        //List 참조 변경
+        modifyListReference(list);
+        System.out.println(list);
     }
 
     public static void modifyPrimitive(int value) {
@@ -50,6 +54,11 @@ public class StackMain {
 
     public static void modifyList(List<String> list) {
         list.add("abc");
+    }
+
+    public static void modifyListReference(List<String> list) {
+        List<String> strs = List.of("abc", "cde");
+        list = strs;
     }
 
     public static void modifyArray(int[] arr) {
