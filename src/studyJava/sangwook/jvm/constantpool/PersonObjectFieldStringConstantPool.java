@@ -1,5 +1,7 @@
 package studyJava.sangwook.jvm.constantpool;
 
+import studyJava.sangwook.jvm.Person;
+
 public class PersonObjectFieldStringConstantPool {
     public static void main(String[] args) {
         Person person1 = new Person();

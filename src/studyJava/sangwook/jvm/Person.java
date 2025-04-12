@@ -1,4 +1,4 @@
-package studyJava.sangwook.jvm.constantpool;
+package studyJava.sangwook.jvm;
 
 public class Person {
     private String name = "Kim";
@@ -12,5 +12,9 @@ public class Person {
     }
 
     public Person() {
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
